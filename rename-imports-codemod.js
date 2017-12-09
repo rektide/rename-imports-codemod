@@ -11,13 +11,15 @@ export default function( file, api, options){
 	  j= api.jscodeshift,
 	  root= j( file.source),
 	  imports= root.find( j.ImportDeclaration),
-	  replaced= imports.replaceWith( i=> {
-		var output= sourceTransform( i.value.source.value)
+	  replaced= imports.replaceWith( nodePath=> {
+		var node= nodePath.node
+		console.log({node})
+		var output= sourceTransform( node.source.value)
 		if( output){
-			i.value.source.value= output
+			node.source.value= output
 		}
-		return i
-	  })
+		return node
+	  }),
 	  transformedSource= replaced.toSource()
 	return transformedSource
 }
