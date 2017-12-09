@@ -1,6 +1,6 @@
 {
 	"name": "rename-imports-codemod",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Rename imports with a search & replace regex codeshift/codemod transform",
 	"main": "rename-imports-codemod.js",
 	"scripts": {

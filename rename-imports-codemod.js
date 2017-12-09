@@ -13,7 +13,6 @@ export default function( file, api, options){
 	  imports= root.find( j.ImportDeclaration),
 	  replaced= imports.replaceWith( nodePath=> {
 		var node= nodePath.node
-		console.log({node})
 		var output= sourceTransform( node.source.value)
 		if( output){
 			node.source.value= output
