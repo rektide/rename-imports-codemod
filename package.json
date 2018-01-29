@@ -1,8 +1,9 @@
 {
 	"name": "rename-imports-codemod",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Rename imports with a search & replace regex codeshift/codemod transform",
-	"main": "rename-imports-codemod.js",
+	"main": "index.js",
+	"module": "rename-imports-codemod.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
@@ -15,7 +16,14 @@
 	"license": "X11",
 	"dependencies": {
 		"@std/esm": "^0.18.0",
+		"cjs-to-es6": "^1.0.1",
 		"jscodeshift": "^0.4.0",
 		"perls": "^1.0.6"
+	},
+	"@std/esm": {
+		"esm": "js",
+		"cjs": {
+			"namedExports": true
+		}
 	}
 }
